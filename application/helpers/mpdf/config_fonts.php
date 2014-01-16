@@ -122,6 +122,22 @@ $this->fontdata = array(
 		'I' => "DejaVuSansMono-Oblique.ttf",
 		'BI' => "DejaVuSansMono-BoldOblique.ttf",
 		),
+    "alegreyasans" => array(
+		'R' => "AlegreyaSans-Regular.ttf",
+		'I' => "AlegreyaSans-Italic.ttf",
+		'B' => "AlegreyaSans-Bold.ttf",
+		'BI' => "AlegreyaSans-BoldItalic.ttf",
+		'BL' => "AlegreyaSans-Black.ttf",
+		'BLI' => "AlegreyaSans-BlackItalic.ttf",
+		'EB' => "AlegreyaSans-ExtraBold.ttf",
+		'EBI' => "AlegreyaSans-ExtraBoldItalic.ttf",
+		'L' => "AlegreyaSans-Light.ttf",
+		'LI' => "AlegreyaSans-LightItalic.ttf",
+		'M' => "AlegreyaSans-Medium.ttf",
+		'MI' => "AlegreyaSans-MediumItalic.ttf",
+		'T' => "AlegreyaSans-Thin.ttf",
+		'TI' => "AlegreyaSans-ThinItalic.ttf",
+        ),
 
 
 /* OCR-B font for Barcodes */
