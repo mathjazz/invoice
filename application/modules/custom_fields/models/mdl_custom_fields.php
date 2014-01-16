@@ -29,11 +29,11 @@ class Mdl_Custom_Fields extends MY_Model {
     public function custom_tables()
     {
         return array(
-            'fi_client_custom'  => lang('client'),
-            'fi_invoice_custom' => lang('invoice'),
-            'fi_payment_custom' => lang('payment'),
-            'fi_quote_custom'   => lang('quote'),
-            'fi_user_custom'    => lang('user')
+            'fi_client_custom'  => 'client',
+            'fi_invoice_custom' => 'invoice',
+            'fi_payment_custom' => 'payment',
+            'fi_quote_custom'   => 'quote',
+            'fi_user_custom'    => 'user'
         );
     }
 
@@ -42,12 +42,12 @@ class Mdl_Custom_Fields extends MY_Model {
         return array(
             'custom_field_table' => array(
                 'field' => 'custom_field_table',
-                'label' => lang('table'),
+                'label' => 'table',
                 'rules' => 'required'
             ),
             'custom_field_label' => array(
                 'field' => 'custom_field_label',
-                'label' => lang('label'),
+                'label' => 'label',
                 'rules' => 'required|max_length[50]'
             )
         );
