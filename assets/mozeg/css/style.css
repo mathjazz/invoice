@@ -1,0 +1,102 @@
+@page {
+    margin: 0.3cm 0.5cm 0;
+}
+
+body {
+    background: #FFFFFF;
+    color: #000 !important;
+    font-family: 'Alegreya Sans', sans-serif;
+    font-size: 13px;
+    overflow-y: auto;
+}
+table {
+    width:100%;
+}
+p {
+    margin-bottom: 0;
+}
+h2 {
+    color: #888888;
+    font-style: italic;
+    font-weight: bold;
+}
+strong {
+    text-transform: uppercase;
+}
+
+#header .left {
+    float: left;
+    padding: 8px 8px 7.5em;
+    width: 521px;
+}
+#header .left .date {
+    font-style: italic;
+    color: #888888;
+}
+#header .left .invoice {
+    margin: 1.5em 0 1.5em;
+}
+#header .right {
+    background: #F9F9F9;
+    float: right;
+    padding: 8px;
+    text-align: right;
+    width: 202px;
+}
+#header .right p.first {
+    margin-top: 30px;
+}
+
+#invoice-items table {
+    margin-bottom: 10px;
+}
+#invoice-items table th:first-child,
+#invoice-items table td:first-child {
+    padding-left: 8px;
+}
+#invoice-items table th.last,
+#invoice-items table td.last {
+    text-align: right;
+}
+#invoice-items table th {
+    border-top: none;
+    border-bottom: none;
+    text-transform: uppercase;
+}
+#invoice-items table td {
+    border-top: 0.1px solid #EBEBEB;
+    border-bottom: none;
+}
+#invoice-items table tfoot .border-top td {
+    border-top: 0.1px solid #EBEBEB;
+}
+#invoice-items table tfoot .border-bottom td {
+    border-bottom: 0.1px solid #EBEBEB;
+}
+#invoice-items table tfoot td {
+    background: #F9F9F9;
+    border: none;
+    padding: 4px 8px;
+}
+
+#bank-info {
+    font-size: 11px;
+    padding-left: 8px;
+}
+
+#footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+}
+
+#invoice-container {
+    margin: auto;
+    margin-top: 25px;
+    width: 900px;
+    padding: 20px;
+    top:10px;
+    background-color: white;
+    box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.8);
+    overflow-y: hidden;
+}
