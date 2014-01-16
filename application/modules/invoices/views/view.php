@@ -20,6 +20,10 @@
         });
 
         $('#btn_save_invoice').click(function() {
+            $('#item_table [name=item_name]').each(function() {
+                var value = $(this).parent().next().find('textarea').val().substring(0, 95) + ".";
+                $(this).val(value);
+            });
             var items = [];
 			var item_order = 1;
             $('table tr.item').each(function() {

@@ -10003,3 +10003,10 @@ Please define your styles before this section.
 .no-padding {
   padding: 0;
 }
+
+#invoice_form #item_table th:first-child,
+#invoice_form #item_table td:first-child,
+#quote_form #item_table th:first-child,
+#quote_form #item_table td:first-child {
+  display: none;
+}
