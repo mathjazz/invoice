@@ -91,7 +91,7 @@ class Mdl_Invoice_Groups extends Response_Model {
             $invoice_id = $invoice_group->invoice_group_next_id;
         }
 
-        $invoice_number .= $invoice_id;
+        $invoice_number = $invoice_id . '-' . $invoice_number;
 
         if ($set_next)
         {
