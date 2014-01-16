@@ -218,6 +218,14 @@ class Mdl_Invoices extends Response_Model {
 
             $this->mdl_invoice_tax_rates->save($target_id, NULL, $db_array);
         }
+
+        $terms = $this->mdl_invoices->where('fi_invoices.invoice_id', $source_id)->get()->row()->invoice_terms;
+
+        $db_array = array(
+            'invoice_terms'        => $terms
+        );
+
+        $this->mdl_invoices->save($target_id, $db_array);
     }
 
     public function db_array()
