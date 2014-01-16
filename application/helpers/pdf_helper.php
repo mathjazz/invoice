@@ -23,6 +23,7 @@ function generate_invoice_pdf($invoice_id, $stream = TRUE, $invoice_template = N
     $CI->load->model('invoices/mdl_invoices');
     $CI->load->model('invoices/mdl_items');
     $CI->load->model('invoices/mdl_invoice_tax_rates');
+    $CI->load->model('tax_rates/mdl_tax_rates');
 
     $invoice = $CI->mdl_invoices->get_by_id($invoice_id);
 
@@ -35,6 +36,7 @@ function generate_invoice_pdf($invoice_id, $stream = TRUE, $invoice_template = N
     $data = array(
         'invoice'           => $invoice,
         'invoice_tax_rates' => $CI->mdl_invoice_tax_rates->where('invoice_id', $invoice_id)->get()->result(),
+        'tax_rates'         => $CI->mdl_tax_rates->get()->result(),
         'items'             => $CI->mdl_items->where('invoice_id', $invoice_id)->get()->result(),
         'output_type'       => 'pdf'
     );
@@ -53,6 +55,7 @@ function generate_quote_pdf($quote_id, $stream = TRUE, $quote_template = NULL)
     $CI->load->model('quotes/mdl_quotes');
     $CI->load->model('quotes/mdl_quote_items');
     $CI->load->model('quotes/mdl_quote_tax_rates');
+    $CI->load->model('tax_rates/mdl_tax_rates');
 
     $quote = $CI->mdl_quotes->get_by_id($quote_id);
 
@@ -64,6 +67,7 @@ function generate_quote_pdf($quote_id, $stream = TRUE, $quote_template = NULL)
     $data = array(
         'quote'           => $quote,
         'quote_tax_rates' => $CI->mdl_quote_tax_rates->where('quote_id', $quote_id)->get()->result(),
+        'tax_rates'         => $CI->mdl_tax_rates->get()->result(),
         'items'           => $CI->mdl_quote_items->where('quote_id', $quote_id)->get()->result(),
         'output_type'     => 'pdf'
     );

@@ -28,6 +28,7 @@ class View extends Base_Controller {
         {
             $this->load->model('invoices/mdl_items');
             $this->load->model('invoices/mdl_invoice_tax_rates');
+            $this->load->model('tax_rates/mdl_tax_rates');
 
             $invoice = $invoice->row();
             
@@ -40,6 +41,7 @@ class View extends Base_Controller {
                 'invoice'           => $invoice,
                 'items'             => $this->mdl_items->where('invoice_id', $invoice->invoice_id)->get()->result(),
                 'invoice_tax_rates' => $this->mdl_invoice_tax_rates->where('invoice_id', $invoice->invoice_id)->get()->result(),
+                'tax_rates'         => $this->mdl_tax_rates->get()->result(),
                 'invoice_url_key'   => $invoice_url_key,
                 'flash_message'     => $this->session->flashdata('flash_message')
             );
@@ -79,6 +81,7 @@ class View extends Base_Controller {
         {
             $this->load->model('quotes/mdl_quote_items');
             $this->load->model('quotes/mdl_quote_tax_rates');
+            $this->load->model('tax_rates/mdl_tax_rates');
 
             $quote = $quote->row();
             
@@ -91,6 +94,7 @@ class View extends Base_Controller {
                 'quote'           => $quote,
                 'items'           => $this->mdl_quote_items->where('quote_id', $quote->quote_id)->get()->result(),
                 'quote_tax_rates' => $this->mdl_quote_tax_rates->where('quote_id', $quote->quote_id)->get()->result(),
+                'tax_rates'         => $this->mdl_tax_rates->get()->result(),
                 'quote_url_key'   => $quote_url_key,
                 'flash_message'   => $this->session->flashdata('flash_message')
             );
