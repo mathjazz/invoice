@@ -116,7 +116,7 @@
             <tr class="<?php if ($notax == true) { ?>border-top <?php } ?>border-bottom">
                 <td colspan="<?php echo $colspan; ?>"></td>
                 <td style="<?php if ($notax == true) { ?>padding-top: 1em;<?php } ?>padding-bottom: 1em;"><strong>ZA&nbsp;PLAČILO</strong></td>
-                <td class="last" style="<?php if ($notax == true) { ?>padding-top: 1em;<?php } ?>padding-bottom: 1em;"><strong><?php echo format_currency($invoice->invoice_balance) ?></strong></td>
+                <td class="last" style="<?php if ($notax == true) { ?>padding-top: 1em;<?php } ?>padding-bottom: 1em;"><strong><?php echo format_currency($invoice->invoice_total) ?></strong></td>
             </tr>
         </tfoot>
     </table>
