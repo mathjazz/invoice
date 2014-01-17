@@ -56,12 +56,19 @@
 </div>
 
 <div id="invoice-items">
+    <?php if ($invoice->invoice_custom_popust > 0) {
+        $colspan = 3;
+    } else {
+        $colspan = 2;
+    }
+    ?>
     <table class="table" style="width: 100%;">
         <thead>
             <tr>
                 <th>STORITEV</th>
                 <th><?php echo lang('qty'); ?></th>
                 <th><?php echo lang('price'); ?></th>
+                <?php if ($invoice->invoice_custom_popust > 0) { echo "<th>POPUST</th>"; } ?>
                 <?php if ($invoice->invoice_item_tax_total > 0) { echo "<th>DDV</th>"; } ?>
                 <th class="last">ZNESEK&nbsp;<?php if ($invoice->invoice_item_tax_total > 0) { echo "BREZ&nbsp;DDV"; } ?></th>
             </tr>
@@ -72,6 +79,7 @@
                     <td><?php echo $item->item_description; ?></td>
                     <td><?php echo format_amount($item->item_quantity); ?></td>
                     <td><?php echo format_currency($item->item_price); ?></td>
+                    <?php if ($invoice->invoice_custom_popust) { echo '<td>' . $invoice->invoice_custom_popust . ' %</td>'; }?>
                     <?php
                         if ($invoice->invoice_item_tax_total > 0) {
                             echo '<td>';
@@ -90,22 +98,23 @@
         <tfoot>
             <?php if ($invoice->invoice_item_tax_total > 0) { 
                 $notax = false;
+                $colspan++;
             ?>
             <tr class="border-top">
-                <td colspan="<?php if ($notax == true) { echo "2"; } else { echo "3"; } ?>"></td>
-                <td style="padding-top: 1em;text-transform: uppercase;">SKUPAJ&nbsp;BREZ&nbsp;DDV</td>
+                <td colspan="<?php echo $colspan; ?>"></td>
+                <td style="padding-top: 1em;">SKUPAJ&nbsp;BREZ&nbsp;DDV</td>
                 <td class="last" style="padding-top: 1em;"><?php echo format_currency($invoice->invoice_item_subtotal); ?></td>
             </tr>
             <tr>
-                <td colspan="<?php if ($notax == true) { echo "2"; } else { echo "3"; } ?>"></td>
-                <td style="text-transform: uppercase;">DDV</td>
+                <td colspan="<?php echo $colspan; ?>"></td>
+                <td>DDV</td>
                 <td class="last"><?php echo format_currency($invoice->invoice_item_tax_total); ?></td>
             </tr>
             <?php } else {
                 $notax = true;
             } ?>
             <tr class="<?php if ($notax == true) { ?>border-top <?php } ?>border-bottom">
-                <td colspan="<?php if ($notax == true) { echo "2"; } else { echo "3"; } ?>"></td>
+                <td colspan="<?php echo $colspan; ?>"></td>
                 <td style="<?php if ($notax == true) { ?>padding-top: 1em;<?php } ?>padding-bottom: 1em;"><strong>ZA&nbsp;PLAČILO</strong></td>
                 <td class="last" style="<?php if ($notax == true) { ?>padding-top: 1em;<?php } ?>padding-bottom: 1em;"><strong><?php echo format_currency($invoice->invoice_balance) ?></strong></td>
             </tr>

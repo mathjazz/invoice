@@ -2,6 +2,14 @@
 
     $(function() {
 
+        // Copy discount custom field value to item discount values
+        var discount = $('#invoice_custom_popust').val();
+        $('#item_table .item [name="discount"]').each(function() {
+            if (discount) {
+                $(this).html(discount + " %");
+            }
+        });
+
         $('#btn_add_item_from_lookup').click(function() {
             $('#modal-placeholder').load("<?php echo site_url('item_lookups/ajax/modal_item_lookups'); ?>/" + Math.floor(Math.random()*1000));
         });
@@ -47,6 +55,7 @@
                 invoice_status_id: $('#invoice_status_id').val(),
                 items: JSON.stringify(items),
                 invoice_terms: $('#invoice_terms').val(),
+                invoice_custom_popust: $('#invoice_custom_popust').val(),
                 custom: $('input[name^=custom]').serializeArray()
             },
             function(data) {

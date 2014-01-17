@@ -47,7 +47,7 @@ class Ajax extends Admin_Controller {
 
                     unset($item->item_id, $item->save_item_as_lookup);
 
-                    $this->mdl_items->save($invoice_id, $item_id, $item);
+                    $this->mdl_items->save($invoice_id, $item_id, $item, $this->input->post('invoice_custom_popust'));
 
                     if ($save_item_as_lookup)
                     {

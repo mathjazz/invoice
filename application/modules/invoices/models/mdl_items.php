@@ -72,12 +72,12 @@ class Mdl_Items extends Response_Model {
         );
     }
 
-    public function save($invoice_id, $id = NULL, $db_array = NULL)
+    public function save($invoice_id, $id = NULL, $db_array = NULL, $discount=0)
     {
         $id = parent::save($id, $db_array);
 
         $this->load->model('invoices/mdl_item_amounts');
-        $this->mdl_item_amounts->calculate($id);
+        $this->mdl_item_amounts->calculate($id, $discount);
 
         $this->load->model('invoices/mdl_invoice_amounts');
         $this->mdl_invoice_amounts->calculate($invoice_id);
