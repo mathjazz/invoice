@@ -6,6 +6,7 @@
 			<th style="width: 100px;"><?php echo lang('quantity'); ?></th>
 			<th style="width: 100px;"><?php echo lang('price'); ?></th>
 			<th><?php echo lang('tax_rate'); ?></th>
+			<th>Popust</th>
 			<th><?php echo lang('subtotal'); ?></th>
 			<th><?php echo lang('tax'); ?></th>
 			<th><?php echo lang('total'); ?></th>
@@ -32,6 +33,7 @@
 					<?php } ?>
 				</select>
 			</td>
+			<td style="vertical-align: top;"><span name="discount"></span></td>
 			<td style="vertical-align: top;"><span name="subtotal"></span></td>
 			<td style="vertical-align: top;"><span name="item_tax_total"></span></td>
 			<td style="vertical-align: top;"><span name="item_total"></span></td>
@@ -56,6 +58,7 @@
 					<?php } ?>
 				</select>
 			</td>
+			<td style="vertical-align: top;"><span name="discount"></span></td>
 			<td style="vertical-align: top;"><span name="subtotal"><?php echo format_currency($item->item_subtotal); ?></span></td>
 			<td style="vertical-align: top;"><span name="item_tax_total"><?php echo format_currency($item->item_tax_total); ?></span></td>
 			<td style="vertical-align: top;"><span name="item_total"><?php echo format_currency($item->item_total); ?></span></td>

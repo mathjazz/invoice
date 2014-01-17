@@ -26,14 +26,14 @@ class Mdl_Quote_Item_Amounts extends CI_Model {
 	 * item_total ((item_quantity * item_price) + item_tax_total)
 	 */
 	
-	public function calculate($item_id)
+	public function calculate($item_id, $discount)
 	{
 		$this->load->model('quotes/mdl_quote_items');
 		$item = $this->mdl_quote_items->get_by_id($item_id);
 		
 		$tax_rate_percent = 0;
 
-		$item_subtotal = $item->item_quantity * $item->item_price;
+		$item_subtotal = $item->item_quantity * $item->item_price * (1 - $discount/100);
 		$item_tax_total = $item_subtotal * ($item->item_tax_rate_percent / 100);
 		$item_total = $item_subtotal + $item_tax_total;
 		

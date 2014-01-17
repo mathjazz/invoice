@@ -72,12 +72,12 @@ class Mdl_Quote_Items extends Response_Model {
         );
     }
 
-    public function save($quote_id, $id = NULL, $db_array = NULL)
+    public function save($quote_id, $id = NULL, $db_array = NULL, $discount=0)
     {
         $id = parent::save($id, $db_array);
 
         $this->load->model('quotes/mdl_quote_item_amounts');
-        $this->mdl_quote_item_amounts->calculate($id);
+        $this->mdl_quote_item_amounts->calculate($id, $discount);
 
         $this->load->model('quotes/mdl_quote_amounts');
         $this->mdl_quote_amounts->calculate($quote_id);
