@@ -16,4 +16,4 @@ TODO
  * Do it from the fresh DB
  * Follow installation instructions
  * Define what custom fields need to be set
- * Define what other settings need to be set
+ * Define what other settings need to be set (tax rates, invoice groups, logos, user info...)
