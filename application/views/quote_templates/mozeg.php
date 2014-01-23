@@ -9,14 +9,24 @@
 
         <p><strong>NAROČNIK: </strong><?php echo $quote->client_name; ?></p>
 
-        <p><strong><?php if ($quote->client_address_1) { echo lang('address') . ':'; } ?></strong>
+        <p>
             <?php
-                if ($quote->client_address_1) { echo $quote->client_address_1; } 
-                if ($quote->client_address_2) { echo ', ' . $quote->client_address_2; } 
-                if ($quote->client_zip) { echo ', ' . $quote->client_zip . ' '; }
-                if ($quote->client_city) { echo $quote->client_city; } 
-                if ($quote->client_state) { echo ', ' . $quote->client_state; }
-                if ($quote->client_country) { echo ', ' . $quote->client_country; }
+                $address = array();
+
+                if ($quote->client_address_1) { array_push($address, $quote->client_address_1); }
+                if ($quote->client_address_2) { array_push($address, $quote->client_address_2); }
+                if ($quote->client_city) {
+                    $city = $quote->client_city;
+                    if ($quote->client_zip) { $city = $quote->client_zip . ' ' . $city; }
+                    array_push($address, $city);
+                }
+                if ($quote->client_state) { array_push($address, $quote->client_state); }
+                if ($quote->client_country) { array_push($address, $quote->client_country); }
+
+                if (count($address) > 0) {
+                    echo '<strong>' . lang('address') . ': </strong>';
+                    echo implode(', ', $address);
+                }
             ?>
         </p>
 

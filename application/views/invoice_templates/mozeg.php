@@ -9,14 +9,24 @@
 
         <p><strong>NAROČNIK: </strong><?php echo $invoice->client_name; ?></p>
 
-        <p><strong><?php if ($invoice->client_address_1) { echo lang('address') . ':'; } ?></strong>
+        <p>
             <?php
-                if ($invoice->client_address_1) { echo $invoice->client_address_1; } 
-                if ($invoice->client_address_2) { echo ', ' . $invoice->client_address_2; } 
-                if ($invoice->client_zip) { echo ', ' . $invoice->client_zip . ' '; }
-                if ($invoice->client_city) { echo $invoice->client_city; } 
-                if ($invoice->client_state) { echo ', ' . $invoice->client_state; }
-                if ($invoice->client_country) { echo ', ' . $invoice->client_country; }
+                $address = array();
+
+                if ($invoice->client_address_1) { array_push($address, $invoice->client_address_1); }
+                if ($invoice->client_address_2) { array_push($address, $invoice->client_address_2); }
+                if ($invoice->client_city) {
+                    $city = $invoice->client_city;
+                    if ($invoice->client_zip) { $city = $invoice->client_zip . ' ' . $city; }
+                    array_push($address, $city);
+                }
+                if ($invoice->client_state) { array_push($address, $invoice->client_state); }
+                if ($invoice->client_country) { array_push($address, $invoice->client_country); }
+
+                if (count($address) > 0) {
+                    echo '<strong>' . lang('address') . ': </strong>';
+                    echo implode(', ', $address);
+                }
             ?>
         </p>
 
