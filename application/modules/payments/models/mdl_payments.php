@@ -36,7 +36,7 @@ class Mdl_Payments extends Response_Model {
 
     public function default_order_by()
     {
-        $this->db->order_by('fi_payments.payment_date DESC');
+        $this->db->order_by('fi_payments.payment_date DESC, fi_invoices.invoice_id DESC');
     }
 
     public function default_join()
