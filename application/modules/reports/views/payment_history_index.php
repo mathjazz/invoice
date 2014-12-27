@@ -26,11 +26,9 @@
 				
 				<div class="control-group">
 					<label class="control-label" for="to_date"><?php echo lang('to_date'); ?></label>
-					<div class="controls">
-						<div class="controls input-append date datepicker">
-							<input size="16" type="text" name="to_date" id="to_date" value="" readonly>
-							<span class="add-on"><i class="icon-th"></i></span>
-						</div>
+					<div class="controls input-append date datepicker">
+						<input size="16" type="text" name="to_date" id="to_date" value="" readonly>
+						<span class="add-on"><i class="icon-th"></i></span>
 					</div>
 				</div>
 				
