@@ -10,8 +10,8 @@
 		<table>
 			<tr>
 				<th><?php echo lang('client'); ?></th>
-				<th class="amount"><?php echo lang('invoice_count'); ?></th>
-				<th class="amount"><?php echo lang('sales_with_tax'); ?></th>
+				<th class="amount" style="width: 20%"><?php echo lang('invoice_count'); ?></th>
+				<th class="amount" style="width: 20%"><?php echo lang('sales_with_tax'); ?></th>
 			</tr>
 			<?php foreach ($results as $result) { ?>
 			<tr>
