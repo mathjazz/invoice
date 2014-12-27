@@ -40,7 +40,7 @@ class Mdl_Reports extends CI_Model {
 			$this->db->where('client_id IN (SELECT client_id FROM fi_invoices)');
 		}
 
-		$this->db->order_by('client_name');
+		$this->db->order_by('sales_with_tax', 'desc');
 
 		return $this->db->get('fi_clients')->result();
 	}
