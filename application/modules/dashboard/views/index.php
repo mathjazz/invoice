@@ -64,13 +64,18 @@
                             <?php foreach ($invoice_status_totals as $total) { ?>
                                 <th><a href="<?php echo site_url($total['href']); ?>"><?php echo $total['label']; ?></a></th>
                             <?php } ?>
+                            <th><a href="<?php echo site_url('invoices/status/all'); ?>"><?php echo lang('total'); ?></a></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <?php foreach ($invoice_status_totals as $total) { ?>
+                            <?php $all = 0;
+                            foreach ($invoice_status_totals as $total) {
+                                $all += $total['sum_total'];
+                            ?>
                                <td class="<?php echo $total['class']; ?>"><?php echo format_currency($total['sum_total']); ?></td>
                             <?php } ?>
+                           <td class="all"><?php echo format_currency($all); ?></td>
                         </tr>
                     </tbody>
                 </table>
