@@ -35,7 +35,7 @@ class Mdl_Invoices extends Response_Model {
                 'class' => 'sent',
                 'href'  => 'invoices/status/sent'
             ),
-            '3' => array(
+            '4' => array(
                 'label' => lang('paid'),
                 'class' => 'paid',
                 'href'  => 'invoices/status/paid'

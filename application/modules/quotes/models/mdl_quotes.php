@@ -35,12 +35,12 @@ class Mdl_Quotes extends Response_Model {
                 'class' => 'sent',
                 'href'  => 'quotes/status/sent'
             ),
-            '3' => array(
+            '4' => array(
                 'label' => lang('approved'),
                 'class' => 'approved',
                 'href'  => 'quotes/status/approved'
             ),
-            '4' => array(
+            '5' => array(
                 'label' => lang('rejected'),
                 'class' => 'rejected',
                 'href'  => 'quotes/status/rejected'
