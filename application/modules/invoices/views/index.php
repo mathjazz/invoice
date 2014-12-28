@@ -15,7 +15,6 @@
             <li <?php if ($status == 'all') { ?>class="active"<?php } ?>><a href="<?php echo site_url('invoices/status/all'); ?>"><?php echo lang('all'); ?></a></li>
 			<li <?php if ($status == 'draft') { ?>class="active"<?php } ?>><a href="<?php echo site_url('invoices/status/draft'); ?>"><?php echo lang('draft'); ?></a></li>
 			<li <?php if ($status == 'sent') { ?>class="active"<?php } ?>><a href="<?php echo site_url('invoices/status/sent'); ?>"><?php echo lang('sent'); ?></a></li>
-			<li <?php if ($status == 'viewed') { ?>class="active"<?php } ?>><a href="<?php echo site_url('invoices/status/viewed'); ?>"><?php echo lang('viewed'); ?></a></li>
             <li <?php if ($status == 'paid') { ?>class="active"<?php } ?>><a href="<?php echo site_url('invoices/status/paid'); ?>"><?php echo lang('paid'); ?></a></li>
             <li <?php if ($status == 'overdue') { ?>class="active"<?php } ?>><a href="<?php echo site_url('invoices/status/overdue'); ?>"><?php echo lang('overdue'); ?></a></li>
 		</ul>
