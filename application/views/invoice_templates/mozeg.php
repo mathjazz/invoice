@@ -42,7 +42,7 @@
 
         <?php 
             $dateString = date_from_mysql($invoice->invoice_date_due, TRUE);
-            echo '<p><strong>' . lang('due_date') . ': </strong>' . strftime("%e. %B %Y", strtotime($dateString)) . '</p>'; ?>
+            echo '<p><strong>Datum zapadlosti: </strong>' . strftime("%e. %B %Y", strtotime($dateString)) . '</p>'; ?>
     </div>
 
     <div class="right">
