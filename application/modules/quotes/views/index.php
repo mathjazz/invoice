@@ -15,10 +15,8 @@
             <li <?php if ($status == 'all') { ?>class="active"<?php } ?>><a href="<?php echo site_url('quotes/status/all'); ?>"><?php echo lang('all'); ?></a></li>
 			<li <?php if ($status == 'draft') { ?>class="active"<?php } ?>><a href="<?php echo site_url('quotes/status/draft'); ?>"><?php echo lang('draft'); ?></a></li>
 			<li <?php if ($status == 'sent') { ?>class="active"<?php } ?>><a href="<?php echo site_url('quotes/status/sent'); ?>"><?php echo lang('sent'); ?></a></li>
-			<li <?php if ($status == 'viewed') { ?>class="active"<?php } ?>><a href="<?php echo site_url('quotes/status/viewed'); ?>"><?php echo lang('viewed'); ?></a></li>
             <li <?php if ($status == 'approved') { ?>class="active"<?php } ?>><a href="<?php echo site_url('quotes/status/approved'); ?>"><?php echo lang('approved'); ?></a></li>
             <li <?php if ($status == 'rejected') { ?>class="active"<?php } ?>><a href="<?php echo site_url('quotes/status/rejected'); ?>"><?php echo lang('rejected'); ?></a></li>
-            <li <?php if ($status == 'canceled') { ?>class="active"<?php } ?>><a href="<?php echo site_url('quotes/status/canceled'); ?>"><?php echo lang('canceled'); ?></a></li>
 		</ul>
 	</div>
 

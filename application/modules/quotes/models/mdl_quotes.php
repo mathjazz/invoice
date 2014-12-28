@@ -36,24 +36,14 @@ class Mdl_Quotes extends Response_Model {
                 'href'  => 'quotes/status/sent'
             ),
             '3' => array(
-                'label' => lang('viewed'),
-                'class' => 'viewed',
-                'href'  => 'quotes/status/viewed'
-            ),
-            '4' => array(
                 'label' => lang('approved'),
                 'class' => 'approved',
                 'href'  => 'quotes/status/approved'
             ),
-            '5' => array(
+            '4' => array(
                 'label' => lang('rejected'),
                 'class' => 'rejected',
                 'href'  => 'quotes/status/rejected'
-            ),
-            '6' => array(
-                'label' => lang('canceled'),
-                'class' => 'canceled',
-                'href'  => 'quotes/status/canceled'
             )
         );
     }
