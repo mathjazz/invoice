@@ -125,42 +125,6 @@
             <div class="widget">
 
                 <div class="widget-title">
-                    <h5><i class="icon-time"></i><?php echo lang('recent_quotes'); ?></h5>
-                </div>
-
-                <table class="table table-striped no-margin">
-                    <thead>
-                        <tr>
-                            <th style="width: 15%;"><?php echo lang('status'); ?></th>
-                            <th style="width: 15%;"><?php echo lang('date'); ?></th>
-                            <th style="width: 10%;"><?php echo lang('quote'); ?></th>
-                            <th style="width: 40%;"><?php echo lang('client'); ?></th>
-                            <th style="text-align: right; width: 15%;"><?php echo lang('balance'); ?></th>
-                            <th style="text-align: center; width: 5%;"><?php echo lang('pdf'); ?></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($quotes as $quote) { ?>
-                            <tr>
-                                <td><span class="label <?php echo $quote_statuses[$quote->quote_status_id]['class']; ?>"><?php echo $quote_statuses[$quote->quote_status_id]['label']; ?></span></td>
-                                <td><?php echo date_from_mysql($quote->quote_date_created); ?></td>
-                                <td><?php echo anchor('quotes/view/' . $quote->quote_id, $quote->quote_number); ?></td>
-                                <td><?php echo anchor('clients/view/' . $quote->client_id, $quote->client_name); ?></td>
-                                <td style="text-align: right;"><?php echo format_currency($quote->quote_total); ?></td>
-                                <td style="text-align: center;"><a href="<?php echo site_url('quotes/generate_pdf/' . $quote->quote_id); ?>" title="<?php echo lang('download_pdf'); ?>"><i class="icon-print"></i></a></td>
-                            </tr>
-                        <?php } ?>
-                        <tr>
-                            <td colspan="6" style="text-align: center;"><?php echo anchor('quotes/status/all', lang('view_all')); ?></td>
-                        </tr>
-                    </tbody>
-                </table>
-
-            </div>
-
-            <div class="widget">
-
-                <div class="widget-title">
                     <h5><i class="icon-time"></i><?php echo lang('recent_invoices'); ?></h5>
                 </div>
 
@@ -188,6 +152,42 @@
                         <?php } ?>
                         <tr>
                             <td colspan="6" style="text-align: center;"><?php echo anchor('invoices/status/all', lang('view_all')); ?></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="widget">
+
+                <div class="widget-title">
+                    <h5><i class="icon-time"></i><?php echo lang('recent_quotes'); ?></h5>
+                </div>
+
+                <table class="table table-striped no-margin">
+                    <thead>
+                        <tr>
+                            <th style="width: 15%;"><?php echo lang('status'); ?></th>
+                            <th style="width: 15%;"><?php echo lang('date'); ?></th>
+                            <th style="width: 10%;"><?php echo lang('quote'); ?></th>
+                            <th style="width: 40%;"><?php echo lang('client'); ?></th>
+                            <th style="text-align: right; width: 15%;"><?php echo lang('balance'); ?></th>
+                            <th style="text-align: center; width: 5%;"><?php echo lang('pdf'); ?></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($quotes as $quote) { ?>
+                            <tr>
+                                <td><span class="label <?php echo $quote_statuses[$quote->quote_status_id]['class']; ?>"><?php echo $quote_statuses[$quote->quote_status_id]['label']; ?></span></td>
+                                <td><?php echo date_from_mysql($quote->quote_date_created); ?></td>
+                                <td><?php echo anchor('quotes/view/' . $quote->quote_id, $quote->quote_number); ?></td>
+                                <td><?php echo anchor('clients/view/' . $quote->client_id, $quote->client_name); ?></td>
+                                <td style="text-align: right;"><?php echo format_currency($quote->quote_total); ?></td>
+                                <td style="text-align: center;"><a href="<?php echo site_url('quotes/generate_pdf/' . $quote->quote_id); ?>" title="<?php echo lang('download_pdf'); ?>"><i class="icon-print"></i></a></td>
+                            </tr>
+                        <?php } ?>
+                        <tr>
+                            <td colspan="6" style="text-align: center;"><?php echo anchor('quotes/status/all', lang('view_all')); ?></td>
                         </tr>
                     </tbody>
                 </table>
