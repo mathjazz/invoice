@@ -13,13 +13,21 @@
 				<th class="amount" style="width: 20%"><?php echo lang('invoice_count'); ?></th>
 				<th class="amount" style="width: 20%"><?php echo lang('sales_with_tax'); ?></th>
 			</tr>
-			<?php foreach ($results as $result) { ?>
+			<?php $total = 0;
+			foreach ($results as $result) {
+                $total += $result->sales_with_tax;
+			?>
 			<tr>
 				<td><?php echo $result->client_name; ?></td>
 				<td class="amount"><?php echo $result->invoice_count; ?></td>
 				<td class="amount"><?php echo format_currency($result->sales_with_tax); ?></td>
 			</tr>
 			<?php } ?>
+			<tr>
+				<th></th>
+				<th class="amount"><b>Skupaj</b></th>
+				<th class="amount"><b><?php echo format_currency($total); ?></b></th>
+			</tr>
 		</table>
 	</body>
 </html>
