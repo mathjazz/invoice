@@ -100,7 +100,7 @@ class Mdl_Invoice_Groups extends Response_Model {
                 $this->load->model('invoices/mdl_quotes');
                 $query = $this->mdl_quotes->get()->row()->quote_number;
             }
-            $invoice_id = explode("-", $query)[0] + 1;
+            $invoice_id = array_shift(array_values(explode("-", $query))) + 1;
         }
 
         $invoice_number = $invoice_id . '-' . $invoice_number;
