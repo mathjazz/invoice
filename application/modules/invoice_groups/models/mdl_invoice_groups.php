@@ -88,7 +88,19 @@ class Mdl_Invoice_Groups extends Response_Model {
         }
         else
         {
-            $invoice_id = $invoice_group->invoice_group_next_id;
+            // Set new invoice/quote ID:
+            // Take latest invoice/quote number, parse ID, increase by 1
+            if ($invoice_group_id == 1)
+            {
+                $this->load->model('invoices/mdl_invoices');
+                $query = $this->mdl_invoices->get()->row()->invoice_number;
+            }
+            else
+            {
+                $this->load->model('invoices/mdl_quotes');
+                $query = $this->mdl_quotes->get()->row()->quote_number;
+            }
+            $invoice_id = explode("-", $query)[0] + 1;
         }
 
         $invoice_number = $invoice_id . '-' . $invoice_number;
