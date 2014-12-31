@@ -15,5 +15,5 @@ TODO
  * Use index.php in urls before removing index.php from config (.htaccess might stay unchanged)
  * Do it from the fresh DB
  * Follow installation instructions
- * Define what custom fields need to be set
+ * Define what custom fields need to be set (tax number, id number...)
  * Define what other settings need to be set (tax rates, invoice groups, logos, user info...)
