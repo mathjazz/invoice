@@ -11,7 +11,6 @@ For installation instructions and user guide see [FusionInvoice official documen
 TODO
 ----
 * Write changelog of features added with this hack.
-* Fixed position for VAT and balance in invoices and quotes (no colspans needed)
 * Provide thorough installation instructions for this specific fork
  * Use index.php in urls before removing index.php from config (.htaccess might stay unchanged)
  * Do it from the fresh DB
