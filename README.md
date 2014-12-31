@@ -6,7 +6,7 @@ Self-hosted web based invoicing system for freelancers and small businesses. A h
 Documentation
 -------------
 
-For installation instructions and user guide see [FusionInvoice official documentation](http://docs.fusioninvoice.com/1.3/).
+For installation instructions and user guide see [FusionInvoice official documentation](https://web.archive.org/web/20131205221156/http://docs.fusioninvoice.com/1.3/Requirements.html).
 
 TODO
 ----
