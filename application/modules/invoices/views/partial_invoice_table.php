@@ -4,9 +4,9 @@
 		<tr>
 			<th><?php echo lang('status'); ?></th>
 			<th><?php echo lang('invoice'); ?></th>
-			<th><?php echo lang('created'); ?></th>
+			<th><?php echo lang('date'); ?></th>
 			<th><?php echo lang('due_date'); ?></th>
-			<th><?php echo lang('client_name'); ?></th>
+			<th><?php echo lang('client'); ?></th>
 			<th style="text-align: right; padding-right: 25px;"><?php echo lang('amount'); ?></th>
 			<th style="text-align: right; padding-right: 25px;"><?php echo lang('balance'); ?></th>
 			<th><?php echo lang('options'); ?></th>
