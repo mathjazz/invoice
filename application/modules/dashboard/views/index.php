@@ -31,7 +31,7 @@
 
             <div class="widget overview">
                 <div class="widget-title">
-                    <h5><i class="icon-file-text"></i><?php echo lang('quote_overview'); ?></h5>
+                    <h5><i class="icon-file-text"></i><?php echo lang('quote_overview').' '.date('Y'); ?></h5>
                 </div>
 
                 <table class="table no-margin">
@@ -55,7 +55,7 @@
             
             <div class="widget overview">
                 <div class="widget-title">
-                    <h5><i class="icon-money"></i><?php echo lang('invoice_overview'); ?></h5>
+                    <h5><i class="icon-money"></i><?php echo lang('invoice_overview').' '.date('Y'); ?></h5>
                 </div>
 
                 <table class="table no-margin">

@@ -270,6 +270,7 @@ class Mdl_Invoice_Amounts extends CI_Model {
     {
         $this->db->select("invoice_status_id, (CASE invoice_status_id WHEN 4 THEN SUM(invoice_paid) ELSE SUM(invoice_total) END) AS sum_total, COUNT(*) AS num_total");
         $this->db->join('fi_invoices', 'fi_invoices.invoice_id = fi_invoice_amounts.invoice_id');
+        $this->db->where('YEAR(invoice_date_created)', 'YEAR(NOW())');
         $this->db->group_by('invoice_status_id');
         $results = $this->db->get('fi_invoice_amounts')->result_array();
 
