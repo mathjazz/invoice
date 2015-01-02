@@ -46,25 +46,18 @@ $(function() {
                             <input type="text" name="client_address_1" id="client_address_1" value="<?php echo $this->mdl_clients->form_value('client_address_1'); ?>">
                         </div>
                     </div>
-
+                    <!--
                     <div class="control-group">
                         <label class="control-label"><?php echo lang('street_address_2'); ?>: </label>
                         <div class="controls">
                             <input type="text" name="client_address_2" id="client_address_2" value="<?php echo $this->mdl_clients->form_value('client_address_2'); ?>">
                         </div>
                     </div>
-
+                    -->
                     <div class="control-group">
                         <label class="control-label"><?php echo lang('city'); ?>: </label>
                         <div class="controls">
                             <input type="text" name="client_city" id="client_city" value="<?php echo $this->mdl_clients->form_value('client_city'); ?>">
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label"><?php echo lang('state'); ?>: </label>
-                        <div class="controls">
-                            <input type="text" name="client_state" id="client_state" value="<?php echo $this->mdl_clients->form_value('client_state'); ?>">
                         </div>
                     </div>
 
@@ -79,6 +72,13 @@ $(function() {
                         <label class="control-label"><?php echo lang('country'); ?>: </label>
                         <div class="controls">
                             <input type="text" name="client_country" id="client_country" value="<?php echo $this->mdl_clients->form_value('client_country'); ?>">
+                        </div>
+                    </div>
+
+                    <div class="control-group">
+                        <label class="control-label"><?php echo lang('state'); ?>: </label>
+                        <div class="controls">
+                            <input type="text" name="client_state" id="client_state" value="<?php echo $this->mdl_clients->form_value('client_state'); ?>">
                         </div>
                     </div>
                 </fieldset>

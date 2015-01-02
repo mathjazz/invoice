@@ -3,10 +3,12 @@
 	<thead>
 		<tr>
 			<th><?php echo lang('client_name'); ?></th>
-			<th><?php echo lang('email_address'); ?></th>
-			<th><?php echo lang('phone_number'); ?></th>
+			<th><?php echo lang('street_address'); ?></th>
+			<th><?php echo lang('city'); ?></th>
+			<th><?php echo lang('zip_code'); ?></th>
+			<th><?php echo lang('country'); ?></th>
 			<th style="text-align: right;"><?php echo lang('balance'); ?></th>
-			<th><?php echo lang('active'); ?></th>
+			<!--<th><?php echo lang('active'); ?></th>-->
 			<th><?php echo lang('options'); ?></th>
 		</tr>
 	</thead>
@@ -15,10 +17,12 @@
 		<?php foreach ($records as $client) { ?>
 		<tr>
 			<td><?php echo anchor('clients/view/' . $client->client_id, $client->client_name); ?></td>
-			<td><?php echo $client->client_email; ?></td>
-            <td><?php echo (($client->client_phone ? $client->client_phone : ($client->client_mobile ? $client->client_mobile : ''))); ?></td>
+			<td><?php echo $client->client_address_1; ?></td>
+			<td><?php echo $client->client_city; ?></td>
+			<td><?php echo $client->client_zip; ?></td>
+			<td><?php echo $client->client_country; ?></td>
 			<td style="text-align: right;"><?php echo format_currency($client->client_invoice_balance); ?></td>
-			<td><?php echo ($client->client_active) ? lang('yes') : lang('no'); ?></td>
+			<!--<td><?php echo ($client->client_active) ? lang('yes') : lang('no'); ?></td>-->
 			<td>
 				<div class="options btn-group">
 					<a class="btn btn-small dropdown-toggle" data-toggle="dropdown" href="#"><i class="icon-cog"></i> <?php echo lang('options'); ?></a>
