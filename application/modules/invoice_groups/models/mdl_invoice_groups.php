@@ -89,12 +89,13 @@ class Mdl_Invoice_Groups extends Response_Model {
         else
         {
             // Set new invoice/quote ID:
-            // Take latest invoice/quote number, parse ID, increase by 1
+            // Take latest invoice/quote number in a cuurent year, parse ID, increase by 1
             $number = 0;
             if ($invoice_group_id == 1)
             {
                 $this->load->model('invoices/mdl_invoices');
-                $query = $this->mdl_invoices->get();
+                $query = $this->mdl_invoices->filter_where('YEAR(invoice_date_created)', date('Y'))->get();
+
                 if ($query->num_rows() > 0)
                 {
                     $number = $query->row()->invoice_number;
@@ -103,7 +104,8 @@ class Mdl_Invoice_Groups extends Response_Model {
             else
             {
                 $this->load->model('invoices/mdl_quotes');
-                $query = $this->mdl_quotes->get();
+                $query = $this->mdl_quotes->filter_where('YEAR(quote_date_created)', date('Y'))->get();
+
                 if ($query->num_rows() > 0)
                 {
                     $number = $query->row()->quote_number;
