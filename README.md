@@ -1,7 +1,7 @@
 Invoice
 =======
 
-Self-hosted web based invoicing system for freelancers and small businesses. A hack of FusionInvoice 1.3.4, adapted in accordance with Slovenian law to use at [Mozeg, d.o.o](http://mozeg.com).
+Self-hosted web based invoicing system for freelancers and small businesses. A hack of FusionInvoice 1.3.4, adapted in accordance with Slovenian law.
 
 Documentation
 -------------
