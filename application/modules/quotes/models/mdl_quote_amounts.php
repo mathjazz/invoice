@@ -176,7 +176,7 @@ class Mdl_Quote_Amounts extends CI_Model {
     {
         $this->db->select("quote_status_id, SUM(quote_total) AS sum_total, COUNT(*) AS num_total");
         $this->db->join('fi_quotes', 'fi_quotes.quote_id = fi_quote_amounts.quote_id');
-        $this->db->where('YEAR(quote_date_created)', 'YEAR(NOW())');
+        $this->db->where('YEAR(quote_date_created)', date('Y'));
         $this->db->group_by('quote_status_id');
         $results = $this->db->get('fi_quote_amounts')->result_array();
 
