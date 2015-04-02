@@ -12,7 +12,7 @@ Installation
     * Choose a language
     * Check requirements (make files and folders readable)
     * Configure database
-    * Configure accounts and company details/info
+    * Configure accounts and company details
 
 3. Make URLs shorter and prettier.
     * Open `application/config/config.php`.
