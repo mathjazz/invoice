@@ -284,7 +284,7 @@ $lang['zip_code'] = 'Poštna številka';
 
 /** New or changed for 1.1.9 release **/
 $lang['column'] = 'Stolpec';
-$lang['custom_fields'] = 'Poljubno polje';
+$lang['custom_fields'] = 'Poljubna polja';
 $lang['custom_field_form'] = 'Obrazec za poljubno polje';
 $lang['label'] = 'Nalepka';
 $lang['last_year'] = 'Zadnje leto';
