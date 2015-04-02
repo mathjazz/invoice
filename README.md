@@ -16,7 +16,7 @@ Installation
 
 3. Make URLs shorter and prettier.
     * Open `application/config/config.php`.
-    * In line 29, replace `$config['index_page'] = 'index.php';` with `$config['index_page'] = '';`.
+    * In line 29, replace `'index.php' with ''`.
 
 Configuration
 -------------
