@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 /*
  * FusionInvoice
- * 
+ *
  * A free and open source web based invoicing system
  *
  * @package		FusionInvoice
@@ -13,7 +13,7 @@ if (!defined('BASEPATH'))
  * @copyright	Copyright (c) 2012 - 2013 FusionInvoice, LLC
  * @license		http://www.fusioninvoice.com/license.txt
  * @link		http://www.fusioninvoice.com
- * 
+ *
  */
 
 class Mdl_Quotes extends Response_Model {
@@ -54,7 +54,7 @@ class Mdl_Quotes extends Response_Model {
             SQL_CALC_FOUND_ROWS fi_quote_custom.*,
             fi_client_custom.*,
             fi_user_custom.*,
-            fi_users.user_name, 
+            fi_users.user_name,
 			fi_users.user_company,
 			fi_users.user_address_1,
 			fi_users.user_address_2,
@@ -196,7 +196,7 @@ class Mdl_Quotes extends Response_Model {
                 'item_order'       => $quote_item->item_order
             );
 
-            $this->mdl_quote_items->save($target_id, NULL, $db_array);
+            $this->mdl_quote_items->save(NULL, $db_array);
         }
 
         $quote_tax_rates = $this->mdl_quote_tax_rates->where('quote_id', $source_id)->get()->result();
@@ -210,7 +210,7 @@ class Mdl_Quotes extends Response_Model {
                 'quote_tax_rate_amount' => $quote_tax_rate->quote_tax_rate_amount
             );
 
-            $this->mdl_quote_tax_rates->save($target_id, NULL, $db_array);
+            $this->mdl_quote_tax_rates->save(NULL, $db_array);
         }
     }
 
@@ -363,7 +363,7 @@ class Mdl_Quotes extends Response_Model {
             }
         }
     }
-    
+
     public function mark_sent($quote_id)
     {
         $this->db->select('quote_status_id');

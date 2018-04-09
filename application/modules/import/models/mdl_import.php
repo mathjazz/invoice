@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 /*
  * FusionInvoice
- * 
+ *
  * A free and open source web based invoicing system
  *
  * @package		FusionInvoice
@@ -13,7 +13,7 @@ if (!defined('BASEPATH'))
  * @copyright	Copyright (c) 2012 - 2013 FusionInvoice, LLC
  * @license		http://www.fusioninvoice.com/license.txt
  * @link		http://www.fusioninvoice.com
- * 
+ *
  */
 
 class Mdl_Import extends Response_Model {
@@ -76,7 +76,7 @@ class Mdl_Import extends Response_Model {
 
     public function default_select()
     {
-        $this->db->select("SQL_CALC_FOUND_ROWS fi_imports.*, 
+        $this->db->select("SQL_CALC_FOUND_ROWS fi_imports.*,
             (SELECT COUNT(*) FROM fi_import_details WHERE import_table_name = 'fi_clients' AND fi_import_details.import_id = fi_imports.import_id) AS num_clients,
             (SELECT COUNT(*) FROM fi_import_details WHERE import_table_name = 'fi_invoices' AND fi_import_details.import_id = fi_imports.import_id) AS num_invoices,
             (SELECT COUNT(*) FROM fi_import_details WHERE import_table_name = 'fi_invoice_items' AND fi_import_details.import_id = fi_imports.import_id) AS num_invoice_items,
@@ -321,7 +321,7 @@ class Mdl_Import extends Response_Model {
                 if (!$record_error)
                 {
                     // No errors, go ahead and create the record
-                    $ids[] = $this->mdl_items->save($db_array['invoice_id'], NULL, $db_array);
+                    $ids[] = $this->mdl_items->save(NULL, $db_array);
                 }
             }
 
