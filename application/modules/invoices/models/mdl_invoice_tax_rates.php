@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 /*
  * FusionInvoice
- * 
+ *
  * A free and open source web based invoicing system
  *
  * @package		FusionInvoice
@@ -13,7 +13,7 @@ if (!defined('BASEPATH'))
  * @copyright	Copyright (c) 2012 - 2013 FusionInvoice, LLC
  * @license		http://www.fusioninvoice.com/license.txt
  * @link		http://www.fusioninvoice.com
- * 
+ *
  */
 
 class Mdl_Invoice_Tax_Rates extends Response_Model {
@@ -33,12 +33,14 @@ class Mdl_Invoice_Tax_Rates extends Response_Model {
         $this->db->join('fi_tax_rates', 'fi_tax_rates.tax_rate_id = fi_invoice_tax_rates.tax_rate_id');
     }
 
-    public function save($invoice_id, $id = NULL, $db_array = NULL)
+    public function save($id = NULL, $db_array = NULL)
     {
         parent::save($id, $db_array);
 
-        $this->load->model('invoices/mdl_invoice_amounts');
-        $this->mdl_invoice_amounts->calculate($invoice_id);
+        if(!empty($db_array['invoice_id'])){
+            $this->load->model('invoices/mdl_invoice_amounts');
+            $this->mdl_invoice_amounts->calculate($db_array['invoice_id']);
+        }
     }
 
     public function validation_rules()

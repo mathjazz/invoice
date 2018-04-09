@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 /*
  * FusionInvoice
- * 
+ *
  * A free and open source web based invoicing system
  *
  * @package		FusionInvoice
@@ -13,7 +13,7 @@ if (!defined('BASEPATH'))
  * @copyright	Copyright (c) 2012 - 2013 FusionInvoice, LLC
  * @license		http://www.fusioninvoice.com/license.txt
  * @link		http://www.fusioninvoice.com
- * 
+ *
  */
 
 class Mdl_Items extends Response_Model {
@@ -21,7 +21,7 @@ class Mdl_Items extends Response_Model {
     public $table              = 'fi_invoice_items';
     public $primary_key        = 'fi_invoice_items.item_id';
     public $date_created_field  = 'item_date_added';
-    
+
     public function default_select()
     {
         $this->db->select('fi_invoice_item_amounts.*, fi_invoice_items.*, item_tax_rates.tax_rate_percent AS item_tax_rate_percent');
@@ -72,15 +72,18 @@ class Mdl_Items extends Response_Model {
         );
     }
 
-    public function save($invoice_id, $id = NULL, $db_array = NULL, $discount=0)
+    public function save($id = NULL, $db_array = NULL)
     {
         $id = parent::save($id, $db_array);
+        $discount = empty(!$db_array['discount']) ? $db_array['discount'] : 0;
 
         $this->load->model('invoices/mdl_item_amounts');
         $this->mdl_item_amounts->calculate($id, $discount);
 
-        $this->load->model('invoices/mdl_invoice_amounts');
-        $this->mdl_invoice_amounts->calculate($invoice_id);
+        if(!empty($db_array['invoice_id'])){
+            $this->load->model('invoices/mdl_invoice_amounts');
+            $this->mdl_invoice_amounts->calculate($db_array['invoice_id']);
+        }
 
         return $id;
     }

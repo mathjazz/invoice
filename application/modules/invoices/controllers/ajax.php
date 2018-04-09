@@ -5,7 +5,7 @@ if (!defined('BASEPATH'))
 
 /*
  * FusionInvoice
- * 
+ *
  * A free and open source web based invoicing system
  *
  * @package		FusionInvoice
@@ -13,7 +13,7 @@ if (!defined('BASEPATH'))
  * @copyright	Copyright (c) 2012 - 2013 FusionInvoice, LLC
  * @license		http://www.fusioninvoice.com/license.txt
  * @link		http://www.fusioninvoice.com
- * 
+ *
  */
 
 class Ajax extends Admin_Controller {
@@ -38,8 +38,10 @@ class Ajax extends Admin_Controller {
             {
                 if ($item->item_name)
                 {
+                    $item->invoice_id    = $invoice_id;
                     $item->item_quantity = standardize_amount($item->item_quantity);
                     $item->item_price    = standardize_amount($item->item_price);
+                    $item->discount      = $this->input->post('invoice_custom_popust');
 
                     $item_id = ($item->item_id) ? : NULL;
 
@@ -47,7 +49,7 @@ class Ajax extends Admin_Controller {
 
                     unset($item->item_id, $item->save_item_as_lookup);
 
-                    $this->mdl_items->save($invoice_id, $item_id, $item, $this->input->post('invoice_custom_popust'));
+                    $this->mdl_items->save($item_id, $item);
 
                     if ($save_item_as_lookup)
                     {
