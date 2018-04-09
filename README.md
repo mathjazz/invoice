@@ -1,7 +1,7 @@
 Invoice
 =======
 
-Self-hosted web based invoicing system for freelancers and small businesses. A hack of FusionInvoice 1.3.4, adapted in accordance with Slovenian law.
+Self-hosted web based invoicing system for freelancers and small businesses. A hack of FusionInvoice 1.3.4, adapted in accordance with Slovenian law. Works with PHP 7.2
 
 Installation
 ------------
